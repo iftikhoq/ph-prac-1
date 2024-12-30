@@ -1,0 +1,571 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            position: relative;
+            /* background-color: black; */
+        }
+        
+        .nav{
+            display: flex;
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            height: 15vh;
+            transition: top 0.3s;
+            justify-content: space-between;
+        }
+        .nav .left{
+            padding: 10px 50px;
+        }
+        .nav .right{
+            display: flex;
+            height: 90%;
+            width: 35%;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+        .nav .right a{
+            text-decoration: none;
+            color: rgb(173, 148, 7);
+        }
+        .nav img{
+            height: 90%;
+            width: 60px;
+        }
+
+        .first-section{
+            display: flex;
+            height: 85vh;
+            width: 100vw;
+            padding-top: 15vh;
+            background-image: url('images/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .first-section .left{
+            width: 50vw;
+            height: 100%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .first-section .left .wrap{
+            width: 55%;
+        }
+        .first-section .left h4{
+            color: #fb9d5c;
+            font-size: 20px;
+        }
+        
+        .first-section .left h2{
+            font-size: 40px;
+        }
+
+        .first-section .left button{
+            margin: 20px;
+            background-color: #fb9d5c;
+            color: white;
+            border: none;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        .first-section .right{
+            width: 50vw;
+            height: 100%;
+        }
+
+        .first-section .right img{
+            margin-top: -8vh;
+            margin-left: 40vh;
+            /* right: 7vw; */
+            /* position: absolute; */
+            height: 93vh;
+
+        }
+
+        .icon-section{
+            display: flex;
+            /* background-color: #fb9d5c; */
+            justify-content: space-evenly;
+            height: 20vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+        .icon-section .others{
+            height: 12vh;
+            margin-top: 4vh;
+        }
+        .icon-section .middle{
+            height: 15vh;
+            margin-top: 2.5vh;
+        }
+        .second-section{
+            min-height: 140vh;
+            width: 100vw;
+        }
+        .second-section .top{
+            height: 20%;
+            width: 100%;
+            padding: 2.5vh 0;
+            /* margin-bottom: 10vh; */
+            text-align: center;
+        }
+
+        .second-section .bottom{
+            height: 80%;
+            padding: 5vh 5vw;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .second-section .bottom .service{
+            width: calc(33.33% - 40px);
+            height: 55%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid rgba(104, 104, 104, 0.644);
+        }
+        .second-section .bottom .service img{
+            height: 30%;
+            margin-bottom: 4%;
+        }
+        .second-section .bottom .service h4{
+            font-size: 25px;
+            margin-bottom: 3%;
+            font-weight: normal;
+        }
+        .second-section .bottom .service .pattern{
+            width: 60%;
+            height: 10%;
+            margin-bottom: 6%;
+        }
+
+        footer .main{
+            color: white;
+            padding: 40px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .fm{
+            height: 60vh;
+            width: 15vw;
+        }
+        .fm .lower-center{
+            display: flex;
+            gap: 4vw;
+        }
+        .fm .lower-center ul{
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2.5vh;
+            left: 30px;
+        }
+        .fm .lower-center .ul-right{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 2.5vh;
+        }
+        .fm1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .fm1 .phone-sec{
+            display: flex;
+            font-size: 13px;
+            color: #fb9d5c;
+        }
+        .fm1 p{
+            padding-top: 3vh;
+            color: gray;
+        }
+        .fm1 .phone-sec img{
+            height: 50px;
+            width: 50px;
+        }
+        .fm1 h1{
+            padding-top: 3vh;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fb9f60;
+        }
+        .fm1 input{
+            background-color: gray;
+            margin-top: 2vh;
+            width: 200px;
+            padding: 10px 6px;
+            color: white;
+            border: none;
+        }
+        .fm5{
+            width: 25vw;
+        }
+        .fm .upper{
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 12vh;
+        }
+        .fm .learn{
+            font-size: 24px;
+        }
+        .fm img{
+            width: 60%;
+        }
+        .fm5 .upper{
+            right: -20px;
+        }
+        .fm .lower5{
+            height: 48vh;
+            display: flex;
+        }
+        .fm .lower-left{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: #a56a41;
+            gap: 5vh;
+            padding: 1.5vh .5vw;
+            height: 45vh;
+            width: 9vw;
+        }
+        .fm .lower-right{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 2.5vh .5vw;
+            font-size: 14px;
+            gap: 5.5vh;
+            height: 45vh;
+            width:12vw;
+        }
+
+
+        .third-section{
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            padding-top: 5vh;
+        }
+
+        .third-section .right{
+            width: 50vw;
+            height: 100%;
+            padding-left: 10vw;
+        }
+        .third-section .right .wrap{
+            /* width: 55%; */
+        }
+        .third-section .right h4{
+            font-size: 40px;
+        }
+        
+        .third-section .right h4 .orange{
+            color: #fb9f60;
+        }
+
+        .third-section .right p{
+            padding-top: 3vh;
+            font-size: 18px;
+        }
+
+        .third-section .right h1{
+            font-size: 40px;
+            font-weight: normal;
+        }
+
+        .third-section .right h2{
+            font-size: 40px;
+            font-weight: normal;
+        }
+        .third-section .right img{
+            height: 120px;
+        }
+
+        .third-section .right button{
+            background-color: #07caf1;
+            border: none;
+            border-radius: 6px;
+            padding: 13px 20px;
+        }
+        .third-section .right .phone-sec{
+            display: flex;
+            padding-top: 4vh;
+        }
+
+        .third-section .left{
+            width: 50vw;
+            height: 100%;
+        }
+
+        .third-section .left img{
+            /* margin-top: vh; */
+            margin-left: 5vh;
+            /* right: 7vw; */
+            /* position: absolute; */
+            height: 100vh;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav" id="nav">
+        <div class="left">
+            <img src="images/logo.png" alt="">
+        </div>
+        <div class="right">
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Login</a>
+        </div>
+    </div>
+
+    <div class="first-section">
+        <div class="left">
+            <div class="wrap">
+                <h4>We provide the best security service</h4>
+                <h2>Safety & security at your fingertips</h2>
+                <button>Read more</button>
+            </div>
+        </div>
+        <div class="right">
+            <img src="images/model.png" alt="">
+        </div>
+    </div>
+
+    <div class="icon-section">
+        <img src="images/icon1.png" class="others" alt="">
+        <img src="images/icon2.png" class="others" alt="">
+        <img src="images/icon3.png" class="middle" alt="">
+        <img src="images/icon4.png" class="others" alt="">
+        <img src="images/icon3.png" class="others" alt="">
+    </div>
+
+    <div class="second-section">
+        <div class="top">
+            <h3>Our Services</h3>
+            <img src="images/pattern.png" alt="">
+            <h5>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </h5>
+            <h5> magna aliqua. Quis ipsum suspendisse ultrices. </h5>
+        </div>
+        <div class="bottom">
+            <div class="service">
+                <img src="images/icon1.png" class="header-img" alt="">
+                <h4 class="header-text">Network Security</h4>
+                <img src="images/pattern.png" class="pattern" alt="">
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, suscipit excepturi. Culpa id exercitationem neque sint sequi vitae non adipisci?</p>
+            </div>
+            <div class="service">
+                <img src="images/icon2.png" class="header-img" alt="">
+                <h4 class="header-text">Network Security</h4>
+                <img src="images/pattern.png" class="pattern" alt="">
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, suscipit excepturi. Culpa id exercitationem neque sint sequi vitae non adipisci?</p>
+            </div>
+            <div class="service">
+                <img src="images/icon4.png" class="header-img" alt="">
+                <h4 class="header-text">Network Security</h4>
+                <img src="images/pattern.png" class="pattern" alt="">
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, suscipit excepturi. Culpa id exercitationem neque sint sequi vitae non adipisci?</p>
+            </div>
+            <div class="service">
+                <img src="images/icon2.png" class="header-img" alt="">
+                <h4 class="header-text">Network Security</h4>
+                <img src="images/pattern.png" class="pattern" alt="">
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, suscipit excepturi. Culpa id exercitationem neque sint sequi vitae non adipisci?</p>
+            </div>
+            <div class="service">
+                <img src="images/icon3.png" class="header-img" alt="">
+                <h4 class="header-text">Network Security</h4>
+                <img src="images/pattern.png" class="pattern" alt="">
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, suscipit excepturi. Culpa id exercitationem neque sint sequi vitae non adipisci?</p>
+            </div>
+            <div class="service">
+                <img src="images/icon4.png" class="header-img" alt="">
+                <h4 class="header-text">Network Security</h4>
+                <img src="images/pattern.png" class="pattern" alt="">
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, suscipit excepturi. Culpa id exercitationem neque sint sequi vitae non adipisci?</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="third-section">
+        <div class="left">
+            <img src="images/model2.png" alt="">
+        </div>
+        <div class="right">
+            <div class="wrap">
+                <button class="home-button">Hire Us</button>
+                <h4><span>We will make your</span><span class="orange"> home & business completely safe.</span></h4>
+                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt uersdet labore et dolore 
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisi nisi 
+                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                    proident, sunt in culpa qui officia</p>
+                <p>Deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit 
+                    voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
+                    ab illo inventore veritatis et quasi architecto beatae.</p>
+                    <section class="phone-sec"><img src="images/phone.png"> <h1> Get free consultation</h1></section>
+                <h2>+(81) 1800-1256-1254</h2>
+            </div>
+        </div>
+    </div>
+
+
+
+      <footer>
+        <div class="main">
+            <div class="fm1 fm">
+                <section class="phone-sec"><img src="images/logo.png"> <h1> Security Manager</h1></section>
+                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt uersdet labore et dolore 
+                    magna aliqua. Ut enim ad minim veniam</p>
+
+                    <h1>Get Jobs  Notifications</h1>
+                    <input type="text" placeholder="Enter your email here....">
+            </div>
+            <div class="fm2 fm">
+                <div class="upper">
+                    <h2 class="learn">Learn More</h2>
+                    <img src="images/pattern.png" alt="">
+                </div>
+                <div class="lower">
+                    <div class="lower-center">
+                        <div class="ul">
+                            <ul type="circle">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            </ul>
+                        </div>
+                        <div class="ul-right">
+                            <p>sdsadsassdasd</p>
+                            <p>sdsaeereresdasdasd</p>
+                            <p>sdasd</p>
+                            <p>sdasdsd</p>
+                            <p>sdadadsd</p>
+                            <p>sdsdasdasdasd</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fm3 fm">
+                <div class="upper">
+                    <h2 class="learn">Learn More</h2>
+                    <img src="images/pattern.png" alt="">
+                </div>
+                <div class="lower">
+                    <div class="lower-center">
+                        <div class="ul">
+                            <ul type="circle">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            </ul>
+                        </div>
+                        <div class="ul-right">
+                            <p>sdsadsassdasd</p>
+                            <p>sdsaeereresdasdasd</p>
+                            <p>sdasd</p>
+                            <p>sdasdsd</p>
+                            <p>sdadadsd</p>
+                            <p>sdsdasdasdasd</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fm4 fm">
+                <div class="upper">
+                    <h2 class="learn">Learn More</h2>
+                    <img src="images/pattern.png" alt="">
+                </div>
+                <div class="lower">
+                    <div class="lower-center">
+                        <div class="ul">
+                            <ul type="circle">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            </ul>
+                        </div>
+                        <div class="ul-right">
+                            <p>sdsadsassdasd</p>
+                            <p>sdsaeereresdasdasd</p>
+                            <p>sdasd</p>
+                            <p>sdasdsd</p>
+                            <p>sdadadsd</p>
+                            <p>sdsdasdasdasd</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fm5 fm">
+                <div class="upper">
+                    <h2 class="learn">Learn More</h2>
+                    <img src="images/pattern.png" alt="">
+                </div>
+                <div class="lower5">
+                    <div class="lower-left">
+                        <h3>Office Address:</h3>
+                        <h3>Office Address:</h3>
+                        <h3>Office Address:</h3>
+                    </div>
+                    <div class="lower-right">
+                        <h3>22 no road, dewanhat, Chattagram</h3>
+                        <h3>22 no road, dewanhat, Chattagram</h3>
+                        <h3>22 no road, dewanhat, Chattagram</h3>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("nav").style.top = "0";
+        } else {
+            document.getElementById("nav").style.top = "-500px";
+        }
+        prevScrollpos = currentScrollPos;
+        } 
+    </script>
+</body>
+</html>
